@@ -70,7 +70,7 @@ public class DTTrain {
         }
     }
 
-
+    //DONE
     public void buildTree() {
         root = new TreeNode(null);
 
@@ -155,7 +155,7 @@ public class DTTrain {
         currFreeAtts.set(attindex, minAtt);
         return curr; //return built node
     }
-
+    //DONE
     public double partitionEntropy(int[][] partition) {
         double totalEnt = 0;
         double total = 0;
@@ -172,7 +172,7 @@ public class DTTrain {
 
         return totalEnt/total;
     }
-
+    //DONE
     public double entropy(int[] classCounts) {
         double total = 0;
         for(int i: classCounts)
@@ -184,7 +184,7 @@ public class DTTrain {
 
         return sum;
     }
-
+    //NOT NEEDED
     public double log2(double x) {
         if(x == 0)
             return 0;
@@ -241,7 +241,7 @@ public class DTTrain {
             System.out.println("Please format your input: DTTrain 'trainingdata' 'modelfile' [percentage of data to train on]");
         }
     }
-
+    //DONE
     private class TreeNode{
         TreeNode parent;
         HashMap<String, TreeNode> children;
