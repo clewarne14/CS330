@@ -18,17 +18,53 @@ import sys
 import argparse
 import math
 import os
+import fileinput
 
 # You may need to define the Tree node and add extra helper functions here
+datamap = dict()
+attvalues = dict()
+atts = []
+numAtts = 0
+numClasses = 0
+root = TreeNode(None)
+class TreeNode:
+    parent = ""
+    children = dict()
+    attribute = ""
+    returnVal = ""
+    def Treenode(t):
+        parent = t
+        attribute = "none"
+        children = dict()
+        returnVal = None
 
+def entropy(classCounts):
+    total = 0
+    for i in classCounts:
+        total = total + i
+    sum = 0
+    for i in range(len(classCounts)):
+        sum = sum - (classCounts[i]/total)*math.log2(classCounts[i]/total)
+
+def buildTree():
+    root = TreeNode(null)
+    currFreeAtts = []
+    for(i in range(numAtts)){
+        currFreeAtts.add(atts)
+    }
 
 def DTtrain(data, model):
     """
     This is the function for training a decision tree model
     """
     # implement your code here
-
+    try:
+        datamap = dict()
+    except:
+        print("Error reading file : " + data)
+        exit()
     pass
+
 
 
 
